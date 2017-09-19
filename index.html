@@ -1,142 +1,153 @@
 <html>
-<title>Operation Manual</title>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<body>
+  <title>Operation Manual</title>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  
+  <body>
     <p>
-        <a href="./MySQL.html" target="_blank">MySQL 常用操作</a>
-    </p>
-    <h3>
-        gencfg.sh配置补充说明
-    </h3>
-    <a># 1:Android,混服; 2:iOS; 3:应用宝; 4:海外地区</a><br />
-    <a>regionid=4</a><br />
+      <a href="./MySQL.html" target="_blank">MySQL 常用操作</a></p>
+    <p>
+      <a href="./PythonSpider.html" target="_blank">Python 爬虫入门及实战</a></p>
+    <h3>gencfg.sh配置补充说明</h3>
+    <a># 1:Android,混服; 2:iOS; 3:应用宝; 4:海外地区</a>
     <br />
-    <a># 渠道ID，0:内网研发; 1:安卓,混服; 2:应用宝; 3:iOS APP正版; 4:越狱渠道; 5:海外渠道</a><br />
-    <a>zone_conf_channelid=5</a><br />
+    <a>regionid=4</a>
     <br />
-    <a># 0:单语言; 1:多语言</a><br />
-    <a>zone_conf_multilang=1</a><br />
     <br />
-    <a># 国家地区, 0:中国; 1:越南; 2:新马; 3:泰国; 4:港澳台; 5:MAX</a><br />
-    <a>zone_conf_region=4</a><br />
-    <h3>
-        游戏服安装补充说明
-    </h3>
-    <a>部服记得清排行榜！</a><br />
-    <h3>
-        日志服数据库、部署补充说明
-    </h3>
-    <a>1.日志数据重新入库或数据库logload_1_1重建，记得清空logload_record_1_1.logload_record数据表。</a><br />
-    <a>2.日志服安装包，记得替换最新的全包里的tdr文件。</a><br />
-    <h3>
-        Linux 环境初始化
-    </h3>
-    <a>echo 'alias ll="ls -l --time-style=long-iso"' >> ~/.bashrc</a><br />
-    <a>echo 'alias grep="egrep --color=auto"' >> ~/.bashrc</a><br />
-    <a>echo 'set nu!' >> ~/.vimrc</a><br />
-    <a>source ~/.bashrc</a><br />
-    <h3>
-        sudo 配置
-    </h3>
-    <a>echo 'Cmnd_Alias SUDO = ALL' >> /etc/sudoers</a><br />
-    <a>echo 'UserName ALL = (root) NOPASSWD: SUDO' >> /etc/sudoers</a><br />
-    <h3>
-        文件备份、移动
-    </h3>
-    <a>mv zone_svr.tar.gz /tmp/zone_svr.tar.gz_$(date +%Y%m%d%H%M%S)</a><br />
-    <h3>
-        Ansible 关闭、启动计划任务
-    </h3>
-    <a>ansible world_group_1 -m service -a 'name=crond state=stopped'</a><br />
-    <a>ansible world_group_1 -m service -a 'name=crond state=started'</a><br />
-    <h3>
-        Ansible 关闭热云(新马)
-    </h3>
+    <a># 渠道ID，0:内网研发; 1:安卓,混服; 2:应用宝; 3:iOS APP正版; 4:越狱渠道; 5:海外渠道</a>
+    <br />
+    <a>zone_conf_channelid=5</a>
+    <br />
+    <br />
+    <a># 0:单语言; 1:多语言</a>
+    <br />
+    <a>zone_conf_multilang=1</a>
+    <br />
+    <br />
+    <a># 国家地区, 0:中国; 1:越南; 2:新马; 3:泰国; 4:港澳台; 5:MAX</a>
+    <br />
+    <a>zone_conf_region=4</a>
+    <br />
+    <h3>游戏服安装补充说明</h3>
+    <a>部服记得清排行榜！</a>
+    <br />
+    <h3>日志服数据库、部署补充说明</h3>
+    <a>1.日志数据重新入库或数据库logload_1_1重建，记得清空logload_record_1_1.logload_record数据表。</a>
+    <br />
+    <a>2.日志服安装包，记得替换最新的全包里的tdr文件。</a>
+    <br />
+    <h3>Linux 环境初始化</h3>
+    <a>echo 'alias ll="ls -l --time-style=long-iso"' >> ~/.bashrc</a>
+    <br />
+    <a>echo 'alias grep="egrep --color=auto"' >> ~/.bashrc</a>
+    <br />
+    <a>echo 'set nu!' >> ~/.vimrc</a>
+    <br />
+    <a>source ~/.bashrc</a>
+    <br />
+    <h3>sudo 配置</h3>
+    <a>echo 'Cmnd_Alias SUDO = ALL' >> /etc/sudoers</a>
+    <br />
+    <a>echo 'UserName ALL = (root) NOPASSWD: SUDO' >> /etc/sudoers</a>
+    <br />
+    <h3>文件备份、移动</h3>
+    <a>mv zone_svr.tar.gz /tmp/zone_svr.tar.gz_$(date +%Y%m%d%H%M%S)</a>
+    <br />
+    <h3>Ansible 关闭、启动计划任务</h3>
+    <a>ansible world_group_1 -m service -a 'name=crond state=stopped'</a>
+    <br />
+    <a>ansible world_group_1 -m service -a 'name=crond state=started'</a>
+    <br />
+    <h3>Ansible 关闭热云(新马)</h3>
     <ol>
-        <li>ansible world_group -m shell -a 'egrep OpenReyunPost /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml'</li>
-        <li>ansible world_group -m shell -a "sed -e 's@&lt;OpenReyunPost&gt;1&lt;/OpenReyunPost&gt;@&lt;OpenReyunPost&gt;0&lt;/OpenReyunPost&gt;@g' /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml"</li>
-        <li>ansible world_group -m shell -a "sed -i 's@&lt;OpenReyunPost&gt;1&lt;/OpenReyunPost&gt;@&lt;OpenReyunPost&gt;0&lt;/OpenReyunPost&gt;@g' /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml"</li>
-        <br />
-        <li>ansible world_group_11 -m shell -a 'ps -ef | egrep [w]orld | wc -l'</li>
-        <li>ansible world_group_11 -m shell -a 'ipcs'</li>
-        <li>ansible world_group_11 -m shell -a 'ipcs | wc -l'</li>
-        <br />
-        <li>ansible-playbook ./playbooks/dgame/stop_zone.yml --limit world_group_11 --list-hosts</li>
-        <li>ansible-playbook ./playbooks/dgame/stop_zone.yml --limit world_group_12 --list-hosts</li>
-        <br />
-        <li>ansible-playbook ./playbooks/dgame/clear_shmkey.yml --limit world_group_11 --list-hosts</li>
-        <li>ansible-playbook ./playbooks/dgame/clear_shmkey.yml --limit world_group_12 --list-hosts</li>
-        <br />
-        <li>ansible-playbook ./playbooks/dgame/start_zone.yml --limit world_group_11 --list-hosts</li>
-        <li>ansible-playbook ./playbooks/dgame/start_zone.yml --limit world_group_12 --list-hosts</li>
-    </ol>
-    <h3>
-        修改服务器为当地时间
-    </h3>
-    <a>越南</a><br />
-    <a>\cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime && ntpdate time.windows.com && hwclock -w</a><br />
-    <a>泰国</a><br />
-    <a>\cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && ntpdate time.windows.com && hwclock -w</a><br />
-    <h3>
-        数据表查询
-    </h3>
-    <a>mysql -h'127.0.0.1' -u'root' -p -P'11990' -A -D'dgame_1_999' -e "SELECT Name FROM DbRoleData_5 WHERE RoleID = '2249927002178651141';"</a><br />
-    <a>mysql -h'127.0.0.1' -u'root' -p -P'3307' -A -D'logload_1_999' -e "SELECT FROM_UNIXTIME(EventTime), RoleName FROM LogRoleLogin WHERE RoleID = '2249927002178651141';"</a><br />
-    <h3>
-        计划任务日志时间与系统时间不符
-    </h3>
-    <a>tailf /var/log/cron</a><br />
-    <a>tailf /var/log/messages 如果系统日志时间也与系统时间不符，则重启系统日志</a><br />
-    <a>service rsyslog restart</a><br />
-    <h3>
-        zone_svr_log.xml日志配置
-    </h3>
-    <a>$ egrep '&lt;Count&gt;' ./zone_svr_log.xml</a><br />
-    <a>&lt;Count&gt;10 &lt;/Count&gt;</a><br />
-    <a># 10：即开启的CategoryList数量</a><br />
+      <li>ansible world_group -m shell -a 'egrep OpenReyunPost /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml'</li>
+      <li>ansible world_group -m shell -a "sed -e 's@&lt;OpenReyunPost&gt;1&lt;/OpenReyunPost&gt;@&lt;OpenReyunPost&gt;0&lt;/OpenReyunPost&gt;@g' /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml"</li>
+      <li>ansible world_group -m shell -a "sed -i 's@&lt;OpenReyunPost&gt;1&lt;/OpenReyunPost&gt;@&lt;OpenReyunPost&gt;0&lt;/OpenReyunPost&gt;@g' /data/home/mmog/server_*/runenv/zone_svr/cfg/zone_svr.xml"</li>
+      <br />
+      <li>ansible world_group_11 -m shell -a 'ps -ef | egrep [w]orld | wc -l'</li>
+      <li>ansible world_group_11 -m shell -a 'ipcs'</li>
+      <li>ansible world_group_11 -m shell -a 'ipcs | wc -l'</li>
+      <br />
+      <li>ansible-playbook ./playbooks/dgame/stop_zone.yml --limit world_group_11 --list-hosts</li>
+      <li>ansible-playbook ./playbooks/dgame/stop_zone.yml --limit world_group_12 --list-hosts</li>
+      <br />
+      <li>ansible-playbook ./playbooks/dgame/clear_shmkey.yml --limit world_group_11 --list-hosts</li>
+      <li>ansible-playbook ./playbooks/dgame/clear_shmkey.yml --limit world_group_12 --list-hosts</li>
+      <br />
+      <li>ansible-playbook ./playbooks/dgame/start_zone.yml --limit world_group_11 --list-hosts</li>
+      <li>ansible-playbook ./playbooks/dgame/start_zone.yml --limit world_group_12 --list-hosts</li></ol>
+    <h3>修改服务器为当地时间</h3>
+    <a>越南</a>
     <br />
-    <a>$ egrep '&lt;CategoryList .*&gt;' ./zone_svr_log.xml</a><br />
-    <a>$ egrep '&lt;Name&gt;' ./zone_svr_log.xml</a><br />
-    <a># 开启的日志类型</a><br />
-    <h3>
-        查看当前1小时在线数量
-    </h3>
-    <a>egrep 'OnlineNum' ./stat_log_$(date +%Y-%m-%d_%H).log</a><br />
-    <h3>
-        查询在线数据
-    </h3>
-    <a>SELECT FROM_UNIXTIME(StatTime), Value FROM logload_stat_1_1.ScalarStat WHERE StatName = 'OnlineNum' LIMIT 10;"</a><br />
-    <h3>
-        Nginx 报错：File not found.
-    </h3>
-    <a>egrep '^user|^group' /etc/php-fpm.d/www.conf /etc/nginx/nginx.conf</a><br />
-    <a>查看用户是否一致，修改后重启相关服务！</a><br />
-    <h3>
-        清理主播棒棒糖排行榜(Redis)
-    </h3>
-    <a>redis-cli</a><br />
-    <a>select 1</a><br />
-    <a>flushdb</a><br />
-    <h3>
-        Linux 6.x 开启IPv6
-    </h3>
-    <a>echo 'net.ipv6.conf.all.disable_ipv6 = 0' >> /etc/sysctl.conf</a><br />
-    <a>sysctl -p /etc/sysctl.conf</a><br />
-    <h3>
-        游戏服可能用到的SQL语句
-    </h3>
-    <a>SELECT Name FROM DbCorpData LIMIT 1;</a><br />
-    <a>军团数据，合服时不能有重复军团名</a><br />
+    <a>\cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime && ntpdate time.windows.com && hwclock -w</a>
     <br />
-    <a>SELECT WinWarCount FROM DbCountryData;</a><br />
-    <a>合服时此数据为0</a><br />
-    <h3>
-        更新wsdl文件后记得清空缓存
-    </h3>
-    <a>rm -vrf /tmp/wsdl*</a><br />
-    <h3>
-        关于系统挂载磁盘注意事项
-    </h3>
-    <a>记得停止数据库，转移完数据再启动</a><br />
-</body>
+    <a>泰国</a>
+    <br />
+    <a>\cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && ntpdate time.windows.com && hwclock -w</a>
+    <br />
+    <h3>数据表查询</h3>
+    <a>mysql -h'127.0.0.1' -u'root' -p -P'11990' -A -D'dgame_1_999' -e "SELECT Name FROM DbRoleData_5 WHERE RoleID = '2249927002178651141';"</a>
+    <br />
+    <a>mysql -h'127.0.0.1' -u'root' -p -P'3307' -A -D'logload_1_999' -e "SELECT FROM_UNIXTIME(EventTime), RoleName FROM LogRoleLogin WHERE RoleID = '2249927002178651141';"</a>
+    <br />
+    <h3>计划任务日志时间与系统时间不符</h3>
+    <a>tailf /var/log/cron</a>
+    <br />
+    <a>tailf /var/log/messages 如果系统日志时间也与系统时间不符，则重启系统日志</a>
+    <br />
+    <a>service rsyslog restart</a>
+    <br />
+    <h3>zone_svr_log.xml日志配置</h3>
+    <a>$ egrep '&lt;Count&gt;' ./zone_svr_log.xml</a>
+    <br />
+    <a>&lt;Count&gt;10 &lt;/Count&gt;</a>
+    <br />
+    <a># 10：即开启的CategoryList数量</a>
+    <br />
+    <br />
+    <a>$ egrep '&lt;CategoryList .*&gt;' ./zone_svr_log.xml</a>
+    <br />
+    <a>$ egrep '&lt;Name&gt;' ./zone_svr_log.xml</a>
+    <br />
+    <a># 开启的日志类型</a>
+    <br />
+    <h3>查看当前1小时在线数量</h3>
+    <a>egrep 'OnlineNum' ./stat_log_$(date +%Y-%m-%d_%H).log</a>
+    <br />
+    <h3>查询在线数据</h3>
+    <a>SELECT FROM_UNIXTIME(StatTime), Value FROM logload_stat_1_1.ScalarStat WHERE StatName = 'OnlineNum' LIMIT 10;"</a>
+    <br />
+    <h3>Nginx 报错：File not found.</h3>
+    <a>egrep '^user|^group' /etc/php-fpm.d/www.conf /etc/nginx/nginx.conf</a>
+    <br />
+    <a>查看用户是否一致，修改后重启相关服务！</a>
+    <br />
+    <h3>清理主播棒棒糖排行榜(Redis)</h3>
+    <a>redis-cli</a>
+    <br />
+    <a>select 1</a>
+    <br />
+    <a>flushdb</a>
+    <br />
+    <h3>Linux 6.x 开启IPv6</h3>
+    <a>echo 'net.ipv6.conf.all.disable_ipv6 = 0' >> /etc/sysctl.conf</a>
+    <br />
+    <a>sysctl -p /etc/sysctl.conf</a>
+    <br />
+    <h3>游戏服可能用到的SQL语句</h3>
+    <a>SELECT Name FROM DbCorpData LIMIT 1;</a>
+    <br />
+    <a>军团数据，合服时不能有重复军团名</a>
+    <br />
+    <br />
+    <a>SELECT WinWarCount FROM DbCountryData;</a>
+    <br />
+    <a>合服时此数据为0</a>
+    <br />
+    <h3>更新wsdl文件后记得清空缓存</h3>
+    <a>rm -vrf /tmp/wsdl*</a>
+    <br />
+    <h3>关于系统挂载磁盘注意事项</h3>
+    <a>记得停止数据库，转移完数据再启动</a>
+    <br /></body>
+
 </html>
