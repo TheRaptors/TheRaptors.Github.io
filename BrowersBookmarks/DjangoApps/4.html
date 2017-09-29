@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html, charset=utf-8">
+        <title>页面一</title>
+        <style>
+            .clearfix:after{
+                content:".";
+                display:block;
+                height:0;
+                clear:both;
+                visibility:hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:block;background-color:yellow">Hello</div>
+        <p></p>
+        <div style="display:inline;background-color:green">Hello</div>
+        <p></p>
+        <div style="display:none;background-color:green">Hello</div>
+        <p></p>
+        <div></div>
+        <!--
+        鼠标类型
+        -->
+        <span style="cursor:cell">Cell</span>
+        <p></p>
+        <span style="cursor:move">Move</span>
+        <p></p>
+        <!--
+        
+        -->  
+        <div style="float:left; background-color:yellow;width:50%">左飘</div>
+        <div style="float:right; background-color:red; width:50%">右飘</div>
+        <p></p>
+        <div style="background-color:green">
+            <div style="float:left">左飘</div>
+            <div style="float:right">右飘</div>
+        </div>
+        <p></p>
+        <div style="background-color:blue">
+            <div style="float:left">左飘</div>
+            <div style="float:right">右飘</div>
+            <div style="clear:both"></div>
+        </div>
+        <p></p>
+        <div>
+            <div class="clearfix">
+            <div style="float:left">左飘</div>
+            <div style="float:right">右飘</div>
+            <div style="clear:both"></div>
+        </div>
+        </div>
+    </body>
+</html>

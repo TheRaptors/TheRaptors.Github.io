@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html, charset=utf-8">
+        <title>页面一</title>
+    </head>
+    <body>
+    
+        <!--
+        div:块级标签
+        span:行内标签
+        -->
+        <div>StringOne</div>
+        <span>StringTwo</span>
+        <p></p>
+        
+        <!--
+        界面显示<div>
+        -->
+        <div>&lt;div&gt;</div>
+        <p></p>
+        
+        <!--
+        界面显示空格
+        -->
+        <div>&nbsp;</div>
+        <p></p>
+        
+        <!--
+        回车
+        -->
+        <p>曾经沧海难为水</p>
+        <p>除却巫山不是云</p>
+        <p></p>
+        
+        <!--
+        换行
+        -->
+        <div>取次花丛懒回顾</br>半缘修道半缘君</div>
+        <p></p>
+        
+        <!--
+        插入空格
+        -->
+        <div>取次花丛懒回顾 半缘修道半缘君</div>
+        <div>取次花丛懒回顾   半缘修道半缘君</div>
+        <div>取次花丛懒回顾&nbsp;半缘修道半缘君</div>
+        <div>取次花丛懒回顾&nbsp;&nbsp;半缘修道半缘君</div>
+        <p></p>
+        
+        <!--
+        第一行：
+        第二行：当前标签跳转到URL
+        第三行：在新标签跳转到URL
+        -->
+        <a href='www.baidu.com'>Hello World!</a><br/>
+        <a href='http://www.baidu.com'>Hello World!</a><br/>
+        <a href='http://www.baidu.com' target='_blank'>Hello World!</a><br/>
+        <p></p>
+        
+        <!--
+        跳转到指定内容
+        
+        <span>目录</span><br/>
+        <div>
+            <a href='#id1'>第一章</a><br/>
+            <a href='#id2'>第二章</a><br/>
+            <a href='#id3'>第三章</a><br/>
+            <a href='#id4'>第四章</a><br/>
+        </div>
+        <p></p>
+        <span>内容</span><br/>
+        <div id='id1'>
+            <p>第一章内容</p>
+            <p>第一章内容</p>
+            <p>第一章内容</p>
+            <p>第一章内容</p>
+            <p>第一章内容</p>
+        </div>
+        <div id='id2' style='height:1000px;background-color:green'>
+            <p>第二章内容</p>
+        </div>
+        <div id='id3' style='height:1000px;background-color:yellow'>
+            <p>第三章内容</p>
+        </div>
+        <div id='id4' style='height:1000px;background-color:blue'>
+            <p>第四章内容</p>
+        </div>
+        <p></p>
+        -->
+        
+        <!--
+        
+        -->
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h5>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+        <p></p>
+        
+        <!--
+        
+        -->
+        <select>
+            <option value="1">千牛</option>
+            <option value="2">虎贲</option>
+            <option value="3">羽林</option>
+            <option value="4" selected="selected">御林</option>
+        </select>
+        <p></p>
+        
+        <!--
+        下拉列表中可见选项的数目。
+        默认值是 1。
+        如果使用了 multiple 属性，默认值是 4。
+        -->
+        <select size="4">
+            <option>帝都</option>
+            <option>魔都</option>
+            <option>东都</option>
+            <option>西都</option>
+            <option>东市</option>
+            <option>南市</option>
+            <option>西市</option>
+            <option>北市</option>
+        </select>
+        <p></p>
+        
+        <!--
+        按Ctrl键可多选
+        -->
+        <select multiple="multiple" size="3">
+            <option>帝都</option>
+            <option>魔都</option>
+            <option>东都</option>
+            <option>西都</option>
+            <option>东市</option>
+            <option>南市</option>
+            <option>西市</option>
+            <option>北市</option>
+        </select>
+        <p></p>
+        
+        <!--
+        
+        -->        
+        <select>
+            <optgroup label="唐以前">
+                <option>秦</option>
+                <option>汉</option>
+                <option>魏</option>
+                <option>晋</option>
+                <option>隋</option>
+
+            </optgroup>
+            <optgroup label="隋以后">
+                <option>唐</option>
+                <option>宋</option>
+                <option>元</option>
+                <option>明</option>
+                <option>清</option>
+            </optgroup>
+        </select>
+        <p></p>
+        
+        <!--
+        
+        -->
+        <input />
+        <input type='text' />
+        <input type='text' max-length='2' />
+        <input type='password' />
+        <p></p>
+        
+        <input type='checkbox' />
+        <input type='checkbox' />
+        <input type='checkbox' /> 
+        <p></p>
+        
+        男:<input type='radio' name='gender' />
+        女:<input type='radio' name='gender' />
+        其他:<input type='radio' name='gender' />
+        <p></p>
+        
+        <!--
+        button，不会
+        submit，
+        -->
+        <input type='button' value='查询' />
+        <input type='submit' value='查询' />
+        <p></p>
+        
+        <input type='file' />
+        <p></p>
+        
+        <input type='file' enctype="multipart/form-data" mothod="POST" />
+        <p></p>
+        
+        <!--
+        多行输入框
+        -->
+        <textarea></textarea>
+        <p></p>
+        
+        <!--
+        提交数据
+        -->
+        <form action='http://www.baidu.com/' method='POST'>
+            姓名:<input name='username' type='text' />
+            <br/><br/>
+            密码:<input name='pwd' type='password' />
+            <input type='button' value='提交' />
+            <input type='submit' value='提交' />
+        </form>
+        <p></p>
+        
+        <!--
+        <form>：
+        <label>：
+        -->
+        <form>
+            姓名:<input id="name1" type="text">
+            婚否:<input id="marry1" type="checkbox">
+        </form>
+        <p></p>
+        
+        <label for="name2">
+            姓名:<input id="name2" type="text">
+        </label>
+        <label for="marry2">
+            婚否:<input id="marry2" type="checkbox">
+        </label>
+        <p></p>
+        
+        <!--
+        序列
+        -->
+        <ul>
+            <li>ul.1</li>
+            <li>ul.2</li>
+            <li>ul.3</li>
+        </ul>
+        <p></p>
+        
+        <ol>
+            <li>ol.1</li>
+            <li>ol.2</li>
+            <li>ol.3</li>
+        </ol>
+        <p></p>
+        
+        <dl>
+            <dt>隋</dt>
+                <dd>隋文帝</dd>
+                <dd>隋炀帝</dd>
+            <dt>唐</dt>
+                <dd>唐太祖</dd>
+                <dd>唐太宗</dd>
+        </dl>
+        <p></p>
+        
+        <!--
+        表格
+        -->
+        <table>
+            <tr>
+                <td>IP</td>
+                <td>User</td>
+                <td>Password</td>
+            </tr>
+            <tr>
+                <td>192.168.1.1</td>
+                <td>root</td>
+                <td>123456</td>
+            </tr>
+        </table>
+        <p></p>
+        
+        <table border="1">
+            <tr>
+                <td>IP</td>
+                <td>User</td>
+                <td>Password</td>
+            </tr>
+            <tr>
+                <td>192.168.1.1</td>
+                <td>root</td>
+                <td>123456</td>
+            </tr>
+        </table>
+        <p></p>
+        
+        <table border="1">
+            <tr>
+                <th>IP</th>
+                <th>User</th>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td>192.168.1.1</td>
+                <td>root</td>
+                <td>123456</td>
+            </tr>
+        </table>
+        <p></p>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                <th>IP</th>
+                <th>User</th>
+                <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>192.168.1.1</td>
+                <td>root</td>
+                <td>123456</td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p>
+        
+        <!--
+        合并单元格，左右合并
+        -->
+        <table border="1">
+            <tr>
+                <th colspan="2">IP</th>
+                <!--
+                <td>User</td>
+                -->
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td>192.168.1.1</td>
+                <td>root</td>
+                <td>123456</td>
+            </tr>
+        </table>
+        <p></p>
+
+        <table border="1">
+            <tr>
+                <th rowspan="2">IP</th>
+                <td>User</td>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <!--
+                <td>192.168.1.1</td>
+                -->
+                <td>root</td>
+                <td>123456</td>
+            </tr>
+        </table>
+        <fieldset>
+            <legend>登录</legend>
+        </fieldset>
+        <p></p>   
+    </body>
+</html>

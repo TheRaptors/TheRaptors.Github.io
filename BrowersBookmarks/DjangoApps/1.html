@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html, charset=utf-8">
+        <title>页面一</title>
+        <link rel="stylesheet" href="common.css" />
+        <style>
+            .logo{
+                background-color:red;
+                font-size:18px;
+                border:1px sold #fff;
+            }
+            #logo{
+                background-color:yellow;
+                font-size:18px;
+                border:1px sold #fff;
+            }
+            div{
+            }
+            <!--
+            a 标签 和 div 标签，使用此配置
+            -->
+            a,div{
+            
+            }
+            <!--
+            a 标签下的 div 标签，使用此配置
+            -->            
+            a div{
+            }
+            input[type="text"]{
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+        方法一：
+        -->
+        <div style="background-color:red;">123</div>
+        <p></p>
+        <!--
+        方法二：
+        -->        
+        <div class="logo">.logo</div>
+        <p></p>
+        <div id="logo">#logo</div>
+    </body>
+</html>
