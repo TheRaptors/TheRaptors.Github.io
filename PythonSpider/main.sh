@@ -5,6 +5,10 @@ if [ $(($(date "+%H") % 12)) == 0 ]; then
 fi
 
 if [ $(($(date "+%H") % 12)) == 0 ]; then
+    python3 ./BaiSiBuDeJie.py > ./BaiSiBuDeJie/$(date "+%Y-%m-%d_%H:%M:%S").txt
+fi
+
+if [ $(($(date "+%H") % 12)) == 0 ]; then
     python ./LoveBiZhi.py > ./LoveBiZhi/$(date "+%Y-%m-%d_%H:%M:%S").txt
 fi
 
